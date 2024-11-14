@@ -2,6 +2,9 @@ img {
     display: block;
     margin-left: auto;
     margin-right: auto;
+    width: 50%; /* Set the width to 50% of its parent container */
+    max-width: 400px; /* Optional: Set a maximum width for larger screens */
+    height: auto; /* Maintain aspect ratio */
     transition: transform 0.3s ease;
 }
 
@@ -93,4 +96,63 @@ section {
     border-radius: 8px;
     box-shadow: 0 2px 5px rgba(255, 0, 0, 0.5); /* Red shadow */
     transition: transform 0.3s;
+}
+/* Styles for the magic button */
+#magic-button {
+    background: linear-gradient(45deg, #ff0000, #ff7f00, #ffff00, #00ff00, #00ffff, #0000ff, #4b0082, #9400d3); /* Rainbow gradient */
+    border: none; /* Remove borders */
+    color: white; /* White text */
+    padding: 20px; /* Padding for size */
+    text-align: center; /* Centered text */
+    text-decoration: none; /* No underline */
+    display: flex; /* Use flexbox for centering */
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically */
+    font-size: 24px; /* Bigger font size */
+    margin: 20px auto; /* Center the button horizontally */
+    cursor: pointer; /* Pointer cursor on hover */
+    border-radius: 50%; /* Circular shape */
+    transition: transform 0.2s, box-shadow 0.3s; /* Smooth transitions */
+    width: 100px; /* Fixed width */
+    height: 100px; /* Fixed height */
+    position: relative; /* Position for shine effect */
+    overflow: hidden; /* Hide overflow for shine effect */
+}
+
+/* Shine effect */
+#magic-button::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: rgba(255, 255, 255, 0.5); /* White shine */
+    border-radius: 50%; /* Circular shine */
+    animation: shine 1.5s infinite; /* Shine animation */
+}
+
+/* Shine animation */
+@keyframes shine {
+    0% {
+        transform: translate(-100%, -100%) rotate(30deg);
+    }
+    100% {
+        transform: translate(100%, 100%) rotate(30deg);
+    }
+}
+
+/* Hover effect */
+#magic-button:hover {
+    transform: scale(1.1); /* Slightly increase size on hover */
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.8); /* Glow effect on hover */
+}
+
+/* Centering the button within its container */
+#about {
+    display: flex; /* Use flexbox */
+    flex-direction: column; /* Stack children vertically */
+    align-items: center; /* Center horizontally */
+    justify-content: center; /* Center vertically (if needed) */
+    height: auto; /* Adjust the height as necessary */
 }
