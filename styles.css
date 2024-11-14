@@ -1,21 +1,65 @@
-* {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
+img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    transition: transform 0.3s ease;
+}
+
+img:hover {
+    transform: scale(1.05);
+}
+
+/* Confetti styles */
+.confetti {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 9999;
+}
+
+.confetti-piece {
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    background-color: #ff0000;
+    opacity: 0.8;
+    animation: fall linear infinite;
+}
+
+@keyframes fall {
+    0% {
+        transform: translateY(0);
+    }
+    100% {
+        transform: translateY(100vh);
+    }
 }
 
 body {
     font-family: 'Arial', sans-serif;
     line-height: 1.6;
-    background-color: #f4f4f4;
-    color: #333;
+    background-color: #1c1c1c; /* Dark background */
+    color: #ffffff; /* White text */
 }
 
 header {
-    background: #35424a;
+    background: #ff0000; /* Red background */
     color: #ffffff;
     padding: 20px 0;
     text-align: center;
+    animation: fadeIn 1s ease-in;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
 }
 
 header h1 {
@@ -35,26 +79,18 @@ nav ul li {
 nav ul li a {
     color: #ffffff;
     text-decoration: none;
+    transition: color 0.3s;
+}
+
+nav ul li a:hover {
+    color: #ffcccc; /* Lighter red on hover */
 }
 
 section {
     padding: 20px;
     margin: 20px;
-    background: #ffffff;
+    background: #2c2c2c; /* Darker background for sections */
     border-radius: 8px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-}
-
-.project {
-    margin-bottom: 20px;
-}
-
-footer {
-    text-align: center;
-    padding: 10px 0;
-    background: #35424a;
-    color: #ffffff;
-    position: relative;
-    bottom: 0;
-    width: 100%;
+    box-shadow: 0 2px 5px rgba(255, 0, 0, 0.5); /* Red shadow */
+    transition: transform 0.3s;
 }
