@@ -1,12 +1,42 @@
+body {
+    font-family: 'Arial', sans-serif;
+    line-height: 1.6;
+    background-color: #1c1c1c; /* Dark background */
+    color: #ffffff; /* White text */
+    margin: 0; /* Remove default margin */
+}
+
+header {
+    background: #ff0000; /* Red background */
+    color: #ffffff;
+    padding: 20px 0;
+    text-align: center;
+}
+
+section {
+    padding: 10px; /* Reduced padding */
+    margin: 10px; /* Reduced margin */
+    background: #2c2c2c; /* Darker background for sections */
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(255, 0, 0, 0.5); /* Red shadow */
+}
+
+.container {
+    display: flex;
+    flex-direction: column; /* Stack sections vertically */
+    align-items: center; /* Center content */
+}
+
 img {
     display: block;
-    margin-left: auto;
-    margin-right: auto;
+    margin: 10px auto; /* Adjusted margin */
     width: 50%; /* Set the width to 50% of its parent container */
     max-width: 400px; /* Optional: Set a maximum width for larger screens */
     height: auto; /* Maintain aspect ratio */
     transition: transform 0.3s ease;
 }
+
+
 
 img:hover {
     transform: scale(1.05);
@@ -48,13 +78,6 @@ body {
     color: #ffffff; /* White text */
 }
 
-header {
-    background: #ff0000; /* Red background */
-    color: #ffffff;
-    padding: 20px 0;
-    text-align: center;
-    animation: fadeIn 1s ease-in;
-}
 
 @keyframes fadeIn {
     from {
@@ -155,4 +178,9 @@ section {
     align-items: center; /* Center horizontally */
     justify-content: center; /* Center vertically (if needed) */
     height: auto; /* Adjust the height as necessary */
+}
+.container{
+    display:flex;
+    
+
 }
